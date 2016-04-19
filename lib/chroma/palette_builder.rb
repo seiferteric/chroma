@@ -25,7 +25,7 @@ module Chroma
       dsl.instance_eval(&@block)
       conversions = dsl.conversions
 
-      Harmonies.send(:define_method, @name) do
+      Harmonies.send(:redefine_method, @name) do
         conversions.map do |color_calls|
           color_calls.evaluate(@color)
         end.unshift(@color)

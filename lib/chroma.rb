@@ -108,9 +108,9 @@ module Chroma
     # @raise       [Errors::PaletteDefinedError] if the palette is already defined
     # @return      [Symbol, String]              the name of the custom palette
     def define_palette(name, &block)
-      if Harmonies.method_defined? name
-        raise Errors::PaletteDefinedError, "Palette `#{name}' already exists"
-      end
+      #if Harmonies.method_defined? name
+      #  raise Errors::PaletteDefinedError, "Palette `#{name}' already exists"
+      #end
 
       PaletteBuilder.build(name, &block)
     end
